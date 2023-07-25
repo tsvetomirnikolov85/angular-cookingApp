@@ -1,0 +1,13 @@
+.footer-nav {
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 1rem;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    }
