@@ -1,0 +1,33 @@
+.header {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.header .container {
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 3rem;
+}
+.logo img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  color: white;
+}
+
+.nav li {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav li i {
+  margin-right: 6px;
+}
