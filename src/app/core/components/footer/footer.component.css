@@ -1,6 +1,5 @@
-.footer-nav {
+.footer {
     cursor: pointer;
-    color: #fff;
     display: flex;
     justify-content: center;
     align-self: center;
@@ -10,4 +9,8 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    }
+}
+
+.footer i {
+    color: #fff;
+}
