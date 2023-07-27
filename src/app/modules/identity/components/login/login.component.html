@@ -1,0 +1,13 @@
+<section class="login-page page-container">
+    <section class="login-page-form-section">
+        <div class="login-page-header">
+            <h2>Login</h2>
+        </div>
+        <form #loginForm="ngForm" (ngSubmit)="onSubmitHandler(loginForm)" class="login-page-form">
+            <input type="email" name="email" class="login-page-email-input" placeholder="Email" required ngModel>
+            <input type="password" name="password" class="login-page-password-input" placeholder="Password" required ngModel>
+            <button class="login-page-btn" type="submit">Login</button>
+        </form>
+    </section>
+
+</section>

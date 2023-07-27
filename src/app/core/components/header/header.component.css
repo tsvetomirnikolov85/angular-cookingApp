@@ -1,31 +1,47 @@
 .header {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
 }
 
 .header .header-container {
-  padding: 14px;
+  padding: 0.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 3rem;
 }
 .logo img {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 100%;
+  margin-left: 3rem;
+  background-color: #4844fc;
 }
 .main-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
   color: white;
 }
 
 .main-nav li {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   cursor: pointer;
+  color: #4844fc;
+}
+
+.main-nav li:hover {
+  color: #fff;
+  transition: ease-in-out 0.2s;
+}
+
+.main-nav li a {
+  color: #fff;
 }
 
 .main-nav li i {

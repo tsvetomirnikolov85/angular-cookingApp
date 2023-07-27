@@ -40,8 +40,8 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.4;
-  background-image: url("https://uploads-ssl.webflow.com/635727e7a49c0c93fa396d52/646fee223eac8a224ce9f6c0_newback.jpg");
-  font-family: "Rubik Distressed", cursive;
+  background-color: #1b1b29;
+  font-family: "Poppins", sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
