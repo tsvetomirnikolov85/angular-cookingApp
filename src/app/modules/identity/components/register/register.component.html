@@ -1,1 +1,20 @@
-<p>register works!</p>
+<section class="register-page page-container">
+    <section class="register-page-form-section">
+        <div class="register-page-header">
+            <h2>Register</h2>
+        </div>
+        <form #registerForm="ngForm" class="register-page-form">
+            <input name="name" class="register-page-name-input" placeholder="Name" required ngModel>
+            <input type="email" name="email" class="register-page-email-input" placeholder="Email" required ngModel>
+            <input type="password" name="password" class="register-page-password-input" placeholder="Password" required ngModel>
+            <input type="password" name="repass" class="register-page-repass-input" placeholder="Repeat password" required ngModel>
+            <button class="register-page-btn" type="submit">Register</button>
+        </form>
+
+        <div class="login-link">
+            <p>Already have an account</p>
+            <a routerLink="/identity/login">Login</a>
+        </div>
+    </section>
+
+</section>
