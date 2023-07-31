@@ -26,7 +26,8 @@
 .register-page-email-input,
 .register-page-name-input,
 .register-page-password-input,
-.register-page-repass-input {
+.register-page-repass-input,
+.register-page-img-input {
   all: unset;
   padding: 0.5rem;
   border-radius: 0.5rem;

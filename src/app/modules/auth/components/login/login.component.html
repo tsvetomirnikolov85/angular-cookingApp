@@ -1,0 +1,21 @@
+<section class="login-page page-container">
+    <section class="login-page-form-section">
+        <div class="login-page-header">
+            <h2>Login</h2>
+        </div>
+        <form #loginForm="ngForm" (ngSubmit)="onSubmitHandler(loginForm)" class="login-page-form">
+            <input name="username" class="login-page-email-input" placeholder="Username" #usernameInput="ngModel" minlength="4" required ngModel>
+            <div class="error" *ngIf="usernameInput.touched && usernameInput.errors?.['required']">Username required</div>
+            <div class="error" *ngIf="usernameInput.touched && usernameInput.errors?.['minlength']">Username length must be at least 4 symbols</div>
+            <input type="password" name="password" class="login-page-password-input" placeholder="Password" #passInput="ngModel" minlength="4" required ngModel>
+            <div class="error" *ngIf="passInput.touched && passInput.errors?.['required']">Password required</div>
+            <div class="error" *ngIf="passInput.touched && passInput.errors?.['minlength']">Password length must be at least 4 symbols</div>
+            <button class="login-page-btn" type="submit">Login</button>
+        </form>
+        <div class="register-link">
+            <p>Don't have an account</p>
+            <a routerLink="/auth/register">Register</a>
+        </div>
+    </section>
+
+</section>

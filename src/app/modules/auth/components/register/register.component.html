@@ -3,9 +3,9 @@
         <div class="register-page-header">
             <h2>Register</h2>
         </div>
-        <form #registerForm="ngForm" class="register-page-form">
-            <input name="name" class="register-page-name-input" placeholder="Name" required ngModel>
-            <input type="email" name="email" class="register-page-email-input" placeholder="Email" required ngModel>
+        <form #registerForm="ngForm" class="register-page-form" (ngSubmit)="onRegisterSubmitHandler(registerForm)">
+            <input name="username" class="register-page-name-input" placeholder="username" required ngModel>
+            <input name="imageUrl" class="register-page-img-input" placeholder="imageUrl" required ngModel>
             <input type="password" name="password" class="register-page-password-input" placeholder="Password" required ngModel>
             <input type="password" name="repass" class="register-page-repass-input" placeholder="Repeat password" required ngModel>
             <button class="register-page-btn" type="submit">Register</button>
@@ -13,7 +13,7 @@
 
         <div class="login-link">
             <p>Already have an account</p>
-            <a routerLink="/identity/login">Login</a>
+            <a routerLink="/auth/login">Login</a>
         </div>
     </section>
 

@@ -65,3 +65,8 @@
 .register-link a {
   color: #f95e29;
 }
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+}

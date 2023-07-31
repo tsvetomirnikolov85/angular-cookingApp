@@ -1,0 +1,45 @@
+.home-page-header {
+  color: #fff;
+  text-align: center;
+  font-size: 4rem;
+}
+.home-page-link {
+  text-decoration: none;
+}
+
+.img-container-top {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 48px;
+}
+
+.img-top {
+  width: 200px;
+  height: 200px;
+}
+
+.img-top img {
+  border-radius: 100%;
+}
+
+.img-container-middle {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 200px;
+}
+
+.img-container-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 48px;
+}
+
+.subtitle {
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.text {
+  color: #ee5a28;
+}
