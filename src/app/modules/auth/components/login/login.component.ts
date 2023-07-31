@@ -9,13 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  isLogged: any;
-  result: any;
-
-  constructor(private authService: AuthService, private router: Router) {
-    this.isLogged = localStorage.getItem('auth');
-    this.result = JSON.parse(this.isLogged);
-  }
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSubmitHandler(form: NgForm): void {
     if (form.invalid) {
@@ -24,8 +18,6 @@ export class LoginComponent {
     const { username, password } = form.value;
 
     this.authService.login(username, password).subscribe(() => {
-      console.log(this.result);
-
       this.router.navigate(['/']);
     });
   }

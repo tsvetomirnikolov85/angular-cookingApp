@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../../user/interfaces/user';
-import { tap } from 'rxjs';
+import { BehaviorSubject, map, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  loggedUser: Object | undefined;
+  isLogged$$ = new BehaviorSubject<boolean>(false);
+  username$$ = new BehaviorSubject<string>('');
+  userImg$$ = new BehaviorSubject<string>('');
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string) {
@@ -16,12 +18,15 @@ export class AuthService {
         username,
         password,
       })
-      .pipe(tap((loggedUser) => (this.loggedUser = loggedUser)))
       .pipe(
-        tap(() => {
-          const key: string = 'auth';
-          const value = JSON.stringify(this.loggedUser);
-          localStorage.setItem(key, value);
+        tap((user) => {
+          localStorage.clear();
+          this.isLogged$$.next(true);
+          this.username$$.next(user.username);
+          this.userImg$$.next(user.imageUrl);
+          localStorage.setItem('id', user._id);
+          localStorage.setItem('username', user.username);
+          localStorage.setItem('userImg', user.imageUrl);
         })
       );
   }
@@ -33,17 +38,34 @@ export class AuthService {
         imageUrl,
         password,
       })
-      .pipe(tap((loggedUser) => (this.loggedUser = loggedUser)))
       .pipe(
-        tap(() => {
-          const key: string = 'auth';
-          const value = JSON.stringify(this.loggedUser);
-          localStorage.setItem(key, value);
+        tap((user) => {
+          localStorage.clear();
+          this.isLogged$$.next(true);
+          this.username$$.next(user.username);
+          this.userImg$$.next(user.imageUrl);
+          localStorage.setItem('id', user._id);
+          localStorage.setItem('username', user.username);
+          localStorage.setItem('userImg', user.imageUrl);
         })
       );
   }
 
   logout(): void {
-    this.loggedUser = [];
+    this.http.get('http://localhost:8080/users/logout');
+    this.isLogged$$.next(false);
+    localStorage.clear();
+  }
+
+  get loginStatus() {
+    return this.isLogged$$.asObservable();
+  }
+
+  get loggedUsername() {
+    return this.username$$.asObservable();
+  }
+
+  get loggedUserUImg() {
+    return this.userImg$$.asObservable();
   }
 }

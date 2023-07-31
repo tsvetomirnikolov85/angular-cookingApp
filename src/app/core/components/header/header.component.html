@@ -3,14 +3,24 @@
     <a routerLink="/" class="logo">
       <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/my-recipes-logo.png" alt="Logo" />
     </a>
+    <div *ngIf="(isLogged | async ) as Profile" class="user-profile-container">
+      <span *ngIf="(username | async | uppercase) as Username" class="welcome">
+        Welcome
+        <span class="user-username">
+          {{Username}}
+        </span>
+      </span>
+      <a href="\"><img *ngIf="(userImg | async) as Img" src={{Img}} alt="" class="user-profile-img"></a>
+
+    </div>
     <nav>
       <ul class="main-nav" role="list">
+
         <li><i class="fa-solid fa-utensils"></i><a href="/recipes/all">Recipes</a></li>
-        <li><i class="fa-solid fa-plus"></i><a href="#">Add Recipe</a></li>
-        <li><i class="fa-solid fa-right-to-bracket"></i><a routerLink="auth/login">Login</a></li>
-        <li><i class="fa-solid fa-user-plus"></i><a routerLink="auth/register">Register</a></li>
-        <li><i class="fa-solid fa-user-tie"></i><a href="#">Profile</a></li>
-        <li><i class="fa-solid fa-right-to-bracket fa-rotate-180"></i><a href="#">Logout</a></li>
+        <li *ngIf="(isLogged | async) as AddRecipe"><i class="fa-solid fa-plus"></i><a href="#">Add Recipe</a></li>
+        <li *ngIf="!(isLogged | async) as Login"><i class="fa-solid fa-right-to-bracket"></i><a routerLink="/auth/login">Login</a></li>
+        <li *ngIf="!(isLogged | async) as Register"><i class="fa-solid fa-user-plus"></i><a routerLink="/auth/register">Register</a></li>
+        <li *ngIf="(isLogged | async) as Logout"><i class="fa-solid fa-right-to-bracket fa-rotate-180"></i><a routerLink="/auth/logout">Logout</a></li>
       </ul>
     </nav>
   </div>

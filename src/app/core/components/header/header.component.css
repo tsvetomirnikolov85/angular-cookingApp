@@ -47,3 +47,24 @@
 .main-nav li i {
   margin-right: 6px;
 }
+.user-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-profile-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.welcome {
+  color: #fff;
+}
+
+.user-username {
+  color: #fc5e27;
+}
