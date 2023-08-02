@@ -7,10 +7,7 @@
   box-sizing: border-box;
   text-decoration: none;
 }
-app-root {
-  height: 100vh;
-  display: block;
-}
+
 /* Remove default margin */
 body,
 h1,
@@ -43,8 +40,10 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.4;
-  background-color: #1b1b29;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://wallpapers.com/images/hd/food-4k-m37wpodzrcbv5gvw.jpg") fixed;
   font-family: "Poppins", sans-serif;
+  position: static;
 }
 
 /* A elements that don't have a class get default styles */

@@ -1,0 +1,10 @@
+.global-error {
+  color: white;
+  background-color: red;
+  position: fixed;
+  right: 400px;
+  top: 400px;
+  z-index: 9999;
+  padding: 14px;
+  border-radius: 14px;
+}

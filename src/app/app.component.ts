@@ -10,7 +10,6 @@ export class AppComponent implements OnInit {
   title = 'angular-cookingApp';
 
   constructor(private authService: AuthService) {}
-
   ngOnInit(): void {
     const id = localStorage.getItem('id');
     const username = localStorage.getItem('username');
