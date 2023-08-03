@@ -12,6 +12,13 @@
   text-align: center;
   font-size: 6rem;
 }
+.see-all {
+  font-size: 64px;
+}
+
+.see-all a {
+  text-decoration: none;
+}
 .home-page-link {
   text-decoration: none;
 }
@@ -24,4 +31,9 @@
 
 .text {
   color: #ee5a28;
+}
+
+.arrow {
+  color: #ee5a28;
+  font-size: 34px;
 }

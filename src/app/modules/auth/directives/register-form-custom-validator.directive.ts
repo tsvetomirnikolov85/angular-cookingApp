@@ -5,6 +5,7 @@ import {
   ValidationErrors,
   Validator,
 } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Directive({
   selector: '[appRegisterFormCustomValidator]',
@@ -17,13 +18,21 @@ import {
   ],
 })
 export class RegisterFormCustomValidatorDirective implements Validator {
-  constructor() {}
+  constructor(private authService: AuthService) {}
   validate(form: FormGroup): ValidationErrors | null {
     if (
       form.controls['repass']?.dirty &&
       form.controls['password']?.value !== form.controls['repass']?.value
     ) {
       form.controls['repass']?.setErrors({ matched: true });
+    }
+
+    if (form.controls['imageUrl']?.dirty) {
+      this.authService.userImg$$.next(form.controls['imageUrl']?.value);
+    }
+
+    if (form.controls['imageUrl']?.pristine) {
+      this.authService.userImg$$.next('');
     }
 
     if (

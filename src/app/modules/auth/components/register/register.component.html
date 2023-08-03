@@ -1,7 +1,11 @@
 <section class="register-page page-container">
     <section class="register-page-form-section">
+
         <div class="register-page-header">
             <h2>Register</h2>
+        </div>
+        <div class="user-img">
+            <img *ngIf="(userImg | async) as Img" src={{Img}} alt="">
         </div>
         <form #registerForm="ngForm" appRegisterFormCustomValidator class="register-page-form" (ngSubmit)="onRegisterSubmitHandler(registerForm)">
             <input name="username" #usernameInput="ngModel" class="register-page-name-input" placeholder="username" required minlength="4" ngModel>

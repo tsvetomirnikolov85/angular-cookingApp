@@ -20,14 +20,31 @@
   height: 100%;
   object-fit: cover;
 }
-.card-text {
-  background-color: #1d1c20;
+.card-content {
+  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 10px;
   text-align: center;
 }
-
-.card-title {
+.recipe-link {
+  text-decoration: none;
+  color: #fff;
 }
-.card-body {
+.card-title {
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  margin: 12px 0px;
+  padding: 8px;
+  font-size: 18px;
+}
+
+.card-title:hover {
+  color: #ed5925;
+  transition: ease-in-out 0.2s;
+}
+.likes-and-favorites-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 12px;
 }
