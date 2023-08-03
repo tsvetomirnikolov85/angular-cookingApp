@@ -3,11 +3,19 @@
         <div class="register-page-header">
             <h2>Register</h2>
         </div>
-        <form #registerForm="ngForm" class="register-page-form" (ngSubmit)="onRegisterSubmitHandler(registerForm)">
-            <input name="username" class="register-page-name-input" placeholder="username" required ngModel>
-            <input name="imageUrl" class="register-page-img-input" placeholder="imageUrl" required ngModel>
-            <input type="password" name="password" class="register-page-password-input" placeholder="Password" required ngModel>
-            <input type="password" name="repass" class="register-page-repass-input" placeholder="Repeat password" required ngModel>
+        <form #registerForm="ngForm" appRegisterFormCustomValidator class="register-page-form" (ngSubmit)="onRegisterSubmitHandler(registerForm)">
+            <input name="username" #usernameInput="ngModel" class="register-page-name-input" placeholder="username" required minlength="4" ngModel>
+            <div class="error" *ngIf="usernameInput.touched && usernameInput.errors?.['required']">Username required</div>
+            <div class="error" *ngIf="usernameInput.touched && usernameInput.errors?.['minlength']">Username length must be at least 4 symbols</div>
+            <input name="imageUrl" #imgInput="ngModel" class="register-page-img-input" placeholder="imageUrl" required ngModel>
+            <div class="error" *ngIf="imgInput.touched && imgInput.errors?.['required']">Image URL is required</div>
+            <input name="password" type="password" #passInput="ngModel" class="register-page-password-input" placeholder="Password" required ngModel minlength="4">
+            <div class="error" *ngIf="passInput.touched && passInput.errors?.['required']">Password required</div>
+            <div class="error" *ngIf="passInput.touched && passInput.errors?.['minlength']">Password length must be at least 4 symbols</div>
+            <input name="repass" type="password" #repassInput="ngModel" class="register-page-repass-input" placeholder="Repeat password" required ngModel minlength="4">
+            <div class="error" *ngIf="repassInput.touched && repassInput.errors?.['required']">Repeat password required</div>
+            <div class="error" *ngIf="repassInput.touched && repassInput.errors?.['minlength']">Repeat password length must be at least 4 symbols</div>
+            <div class="error" *ngIf="repassInput.errors?.['matched']">Repeat password doesn't match</div>
             <button class="register-page-btn" type="submit">Register</button>
         </form>
 

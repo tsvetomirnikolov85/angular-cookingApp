@@ -36,7 +36,7 @@
 }
 
 .register-page-header {
-  color: #fff;
+  color: #f15b27;
   font-size: 3rem;
   margin-bottom: 3rem;
 }
@@ -67,4 +67,9 @@
 
 .login-link a {
   color: #f95e29;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
 }

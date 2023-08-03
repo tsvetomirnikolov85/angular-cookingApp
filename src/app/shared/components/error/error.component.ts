@@ -14,10 +14,8 @@ export class ErrorComponent implements OnInit {
   ngOnInit(): void {
     this.error = this.errorService.error$;
 
-    if (this.error) {
-      setInterval(() => {
-        this.errorService.err$$.next('');
-      }, 5000);
-    }
+    setInterval(() => {
+      this.errorService.err$$.next('');
+    }, 6000);
   }
 }
