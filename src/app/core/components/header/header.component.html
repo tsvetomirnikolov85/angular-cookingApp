@@ -16,7 +16,7 @@
     <nav>
       <ul class="main-nav" role="list">
 
-        <li><i class="fa-solid fa-utensils"></i><a href="/recipes/all">Recipes</a></li>
+        <li><i class="fa-solid fa-utensils"></i><a href="/recipes/all">All Recipes</a></li>
         <li *ngIf="(isLogged | async) as AddRecipe"><i class="fa-solid fa-plus"></i><a href="#">Add Recipe</a></li>
         <li *ngIf="!(isLogged | async) as Login"><i class="fa-solid fa-right-to-bracket"></i><a routerLink="/auth/login">Login</a></li>
         <li *ngIf="!(isLogged | async) as Register"><i class="fa-solid fa-user-plus"></i><a routerLink="/auth/register">Register</a></li>

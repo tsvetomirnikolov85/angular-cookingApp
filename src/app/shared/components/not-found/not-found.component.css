@@ -1,0 +1,18 @@
+.not-found-container {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.not-found-number {
+  color: #fff;
+  font-size: 10rem;
+}
+
+.not-found-text {
+  font-size: 5rem;
+  color: #fff;
+}
