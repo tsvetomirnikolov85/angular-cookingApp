@@ -7,12 +7,17 @@ import { Recipe } from '../../interfaces/recipe';
   templateUrl: './recipes-list.component.html',
   styleUrls: ['./recipes-list.component.css'],
 })
+<<<<<<< HEAD
 export class RecipesListComponent implements OnInit {
   recipes!: Recipe[];
 
   iconClass = 'fa-regular fa-thumbs-up';
 
   constructor(private recipeService: RecipesService) {}
+=======
+export class RecipesListComponent {
+  iconClass = 'fa-regular fa-thumbs-up';
+>>>>>>> 6793b0917af5f6e6cd1fdafb7588770a51c7238b
   like(): void {
     if (this.iconClass == 'fa-regular fa-thumbs-up') {
       this.iconClass = 'fa-solid fa-thumbs-up';
@@ -20,6 +25,7 @@ export class RecipesListComponent implements OnInit {
       this.iconClass = 'fa-regular fa-thumbs-up';
     }
   }
+<<<<<<< HEAD
 
   ngOnInit() {
     this.recipeService.getAllRecipes().subscribe({
@@ -28,4 +34,6 @@ export class RecipesListComponent implements OnInit {
       },
     });
   }
+=======
+>>>>>>> 6793b0917af5f6e6cd1fdafb7588770a51c7238b
 }
