@@ -15,14 +15,9 @@ import { AddRecipeFormCustomValidatorDirective } from './directives/add-recipe-c
     AddRecipeComponent,
     EditRecipeComponent,
     RecipeDetailsComponent,
-<<<<<<< HEAD
     AddRecipeFormCustomValidatorDirective,
   ],
   imports: [CommonModule, RecipesRoutingModule, FormsModule],
-=======
-  ],
-  imports: [CommonModule, RecipesRoutingModule],
->>>>>>> 6793b0917af5f6e6cd1fdafb7588770a51c7238b
   exports: [
     RecipesListComponent,
     AddRecipeComponent,
