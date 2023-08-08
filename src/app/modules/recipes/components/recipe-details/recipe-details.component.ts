@@ -8,9 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecipeDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
+  id = '';
+
   ngOnInit(): void {
-    let id = '';
     this.route.params.subscribe((p) => {
+      this.id = p['id'];
     });
   }
 }
