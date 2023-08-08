@@ -8,7 +8,7 @@ import { EditRecipeComponent } from './components/edit-recipe/edit-recipe.compon
 
 const routes: Routes = [
   {
-    path: 'all',
+    path: '',
     component: RecipesListComponent,
   },
   {

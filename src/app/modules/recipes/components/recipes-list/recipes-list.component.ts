@@ -13,13 +13,6 @@ export class RecipesListComponent implements OnInit {
   iconClass = 'fa-regular fa-thumbs-up';
 
   constructor(private recipeService: RecipesService) {}
-  like(): void {
-    if (this.iconClass == 'fa-regular fa-thumbs-up') {
-      this.iconClass = 'fa-solid fa-thumbs-up';
-    } else if (this.iconClass == 'fa-solid fa-thumbs-up') {
-      this.iconClass = 'fa-regular fa-thumbs-up';
-    }
-  }
 
   ngOnInit() {
     this.recipeService.getAllRecipes().subscribe({

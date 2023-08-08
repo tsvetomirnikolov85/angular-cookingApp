@@ -1,12 +1,12 @@
 <div class="cards-container">
     <div *ngFor="let recipe of recipes" class="card">
         <div class="card-img-container">
-            <a routerLink="">
+            <a routerLink="{{recipe._id}}">
                 <img src={{recipe.imageUrl}}>
             </a>
         </div>
         <div class="card-content">
-            <a routerLink="" class="recipe-link">
+            <a routerLink="{{recipe._id}}" class="recipe-link">
                 <h2 class="card-title">{{recipe.title}}</h2>
             </a>
             <article class="card-info-container">
@@ -15,7 +15,7 @@
                     <p>{{recipe.ownerName}}</p>
                 </span>
                 <span class="card-likes-container">
-                    <i class={{iconClass}}></i>
+                    <i class="fa-solid fa-thumbs-up"></i>
                     <p>{{recipe.likes.length}}</p>
                 </span>
             </article>
