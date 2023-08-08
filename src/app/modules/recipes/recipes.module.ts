@@ -8,7 +8,18 @@ import { EditRecipeComponent } from './components/edit-recipe/edit-recipe.compon
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 
 @NgModule({
-  declarations: [RecipesListComponent, AddRecipeComponent, EditRecipeComponent, RecipeDetailsComponent],
+  declarations: [
+    RecipesListComponent,
+    AddRecipeComponent,
+    EditRecipeComponent,
+    RecipeDetailsComponent,
+  ],
   imports: [CommonModule, RecipesRoutingModule],
+  exports: [
+    RecipesListComponent,
+    AddRecipeComponent,
+    EditRecipeComponent,
+    RecipeDetailsComponent,
+  ],
 })
 export class RecipesModule {}

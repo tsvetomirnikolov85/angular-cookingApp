@@ -43,8 +43,46 @@
   color: #ed5925;
   transition: ease-in-out 0.2s;
 }
-.likes-and-favorites-container {
+
+.card-info-container {
   display: flex;
   justify-content: space-between;
-  margin: 0px 12px;
+  align-items: center;
+  margin: 0 12px;
+}
+
+.card-user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-likes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-user-container img {
+  width: 30px;
+  min-height: 30px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.card-user-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card-user-container a:hover {
+  text-decoration: underline;
+  color: #ed5925;
+  transition: ease-in-out 0.2s;
+}
+.card-like-btn {
+  all: unset;
+  cursor: pointer;
 }
