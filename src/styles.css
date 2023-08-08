@@ -40,7 +40,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.4;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("https://wallpapers.com/images/hd/food-4k-m37wpodzrcbv5gvw.jpg") fixed;
   font-family: "Poppins", sans-serif;
   position: static;

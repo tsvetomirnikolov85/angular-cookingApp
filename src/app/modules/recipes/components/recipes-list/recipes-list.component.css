@@ -3,29 +3,37 @@
   flex-wrap: wrap;
   margin-top: 10px;
   gap: 12px;
-  max-width: 1880px;
-  margin: 12px auto 0px auto;
+  max-width: 1377px;
+  margin: 0px auto;
+  min-height: 83vh;
+  overflow: hidden;
 }
 .card {
   display: flex;
-  flex-direction: column;
+  flex: 0 0 20rem;
   border: 1px solid #fff;
   overflow: hidden;
-  width: 300px;
   background-color: transparent;
+  border: 2px solid black;
+}
+.card-img-container {
+  border: 1px solid red;
+  width: 100%;
+  height: 300px;
 }
 
-.card-image > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .card-content {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 10px;
   text-align: center;
+  border: 1px solid orchid;
 }
+
+.card-image > img {
+  object-fit: cover;
+}
+
 .recipe-link {
   text-decoration: none;
   color: #fff;
@@ -43,8 +51,46 @@
   color: #ed5925;
   transition: ease-in-out 0.2s;
 }
-.likes-and-favorites-container {
+
+.card-info-container {
   display: flex;
   justify-content: space-between;
-  margin: 0px 12px;
+  align-items: center;
+  margin: 0 12px;
+}
+
+.card-user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-likes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-user-container img {
+  width: 30px;
+  min-height: 30px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.card-user-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card-user-container a:hover {
+  text-decoration: underline;
+  color: #ed5925;
+  transition: ease-in-out 0.2s;
+}
+.card-like-btn {
+  all: unset;
+  cursor: pointer;
 }

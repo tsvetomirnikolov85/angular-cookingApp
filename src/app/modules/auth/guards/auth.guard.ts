@@ -7,7 +7,6 @@ import {
 import { AuthService } from '../services/auth.service';
 import { Injectable } from '@angular/core';
 import { ErrorService } from 'src/app/shared/services/error.service';
-import { EMPTY } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
@@ -17,18 +16,20 @@ export class AuthGuard implements CanActivate {
     private router: Router
   ) {}
 
+  isLogged!: boolean;
+
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (route.routeConfig?.path === 'login') {
-      const isLogged = localStorage.getItem('username');
-      if (isLogged) {
+      this.isLogged = !!localStorage.getItem('token');
+      if (this.isLogged) {
         this.errorService.err$$.next('You are already logged in !');
         this.router.navigate(['/']);
       }
     }
 
     if (route.routeConfig?.path === 'register') {
-      const isLogged = localStorage.getItem('username');
-      if (isLogged) {
+      this.isLogged = !!localStorage.getItem('token');
+      if (this.isLogged) {
         this.errorService.err$$.next(
           'You are already registered and logged in !'
         );
@@ -37,8 +38,15 @@ export class AuthGuard implements CanActivate {
     }
 
     if (route.routeConfig?.path === 'logout') {
-      const isLogged = localStorage.getItem('username');
-      if (!isLogged) {
+      this.isLogged = !!localStorage.getItem('token');
+      if (!this.isLogged) {
+        this.router.navigate(['/auth/login']);
+      }
+    }
+
+    if (route.routeConfig?.path === 'profile') {
+      this.isLogged = !!localStorage.getItem('token');
+      if (!this.isLogged) {
         this.router.navigate(['/auth/login']);
       }
     }

@@ -15,6 +15,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.isLogged = this.authService.loginStatus;
     this.username = this.authService.loggedUsername;
-    this.userImg = this.authService.loggedUserUImg;
+    this.userImg = this.authService.loggedUserImg;
   }
 }

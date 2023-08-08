@@ -1,17 +1,18 @@
 <section class="register-page page-container">
     <section class="register-page-form-section">
-
-        <div class="register-page-header">
-            <h2>Register</h2>
-        </div>
         <div class="user-img">
             <img *ngIf="(userImg | async) as Img" src={{Img}} alt="">
         </div>
+        <div class="register-page-header">
+            <h2>Register</h2>
+        </div>
+
         <form #registerForm="ngForm" appRegisterFormCustomValidator class="register-page-form" (ngSubmit)="onRegisterSubmitHandler(registerForm)">
-            <input name="username" #usernameInput="ngModel" class="register-page-name-input" placeholder="username" required minlength="4" ngModel>
+            <input name="username" #usernameInput="ngModel" class="register-page-name-input" placeholder="username" required minlength="4" maxlength="20" ngModel>
             <div class="error" *ngIf="usernameInput.touched && usernameInput.errors?.['required']">Username required</div>
             <div class="error" *ngIf="usernameInput.touched && usernameInput.errors?.['minlength']">Username length must be at least 4 symbols</div>
-            <input name="imageUrl" #imgInput="ngModel" class="register-page-img-input" placeholder="imageUrl" required ngModel>
+            <div class="error" *ngIf="usernameInput.touched && usernameInput.errors?.['maxlength']">Username length can't be more than 20 symbols</div>
+            <input name="imageUrl" #imgInput="ngModel" class="register-page-img-input" placeholder="ImageUrl(Will appear in the circle)" required ngModel>
             <div class="error" *ngIf="imgInput.touched && imgInput.errors?.['required']">Image URL is required</div>
             <input name="password" type="password" #passInput="ngModel" class="register-page-password-input" placeholder="Password" required ngModel minlength="4">
             <div class="error" *ngIf="passInput.touched && passInput.errors?.['required']">Password required</div>

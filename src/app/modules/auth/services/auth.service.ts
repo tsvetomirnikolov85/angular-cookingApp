@@ -8,6 +8,8 @@ import { BehaviorSubject, tap } from 'rxjs';
 })
 export class AuthService {
   isLogged$$ = new BehaviorSubject<boolean>(false);
+  token$$ = new BehaviorSubject<string>('');
+  id$$ = new BehaviorSubject<string>('');
   username$$ = new BehaviorSubject<string>('');
   userImg$$ = new BehaviorSubject<string>('');
   constructor(private http: HttpClient) {}
@@ -22,9 +24,12 @@ export class AuthService {
         tap((user) => {
           localStorage.clear();
           this.isLogged$$.next(true);
+          this.token$$.next(user.accessToken);
+          this.id$$.next(user._id);
           this.username$$.next(user.username);
           this.userImg$$.next(user.imageUrl);
           localStorage.setItem('id', user._id);
+          localStorage.setItem('token', user.accessToken);
           localStorage.setItem('username', user.username);
           localStorage.setItem('userImg', user.imageUrl);
         })
@@ -42,9 +47,12 @@ export class AuthService {
         tap((user) => {
           localStorage.clear();
           this.isLogged$$.next(true);
+          this.token$$.next(user.accessToken);
+          this.id$$.next(user._id);
           this.username$$.next(user.username);
           this.userImg$$.next(user.imageUrl);
           localStorage.setItem('id', user._id);
+          localStorage.setItem('token', user.accessToken);
           localStorage.setItem('username', user.username);
           localStorage.setItem('userImg', user.imageUrl);
         })
@@ -65,7 +73,11 @@ export class AuthService {
     return this.username$$.asObservable();
   }
 
-  get loggedUserUImg() {
+  get loggedUserId() {
+    return this.id$$.asObservable();
+  }
+
+  get loggedUserImg() {
     return this.userImg$$.asObservable();
   }
 }

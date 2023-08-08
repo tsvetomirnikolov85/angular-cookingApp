@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { errorInterceptorProvider } from './shared/interceptors/error.interceptor';
+import { RecipesModule } from './modules/recipes/recipes.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -14,6 +15,7 @@ import { errorInterceptorProvider } from './shared/interceptors/error.intercepto
     CoreModule,
     SharedModule,
     HttpClientModule,
+    RecipesModule,
   ],
   providers: [errorInterceptorProvider],
   bootstrap: [AppComponent],

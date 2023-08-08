@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +11,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class RegisterComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
-  userImg!: BehaviorSubject<string>;
+  userImg!: Observable<string>;
+
   onRegisterSubmitHandler(form: NgForm) {
     if (form.invalid) {
       return;
@@ -24,6 +25,6 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userImg = this.authService.userImg$$;
+    this.userImg = this.authService.loggedUserImg;
   }
 }

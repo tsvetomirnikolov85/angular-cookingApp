@@ -1,1 +1,26 @@
-<p>add-recipe works!</p>
+<section class="add-recipe-page page-container">
+    <section class="add-recipe-page-form-section">
+        <div class="recipe-img">
+            <img *ngIf="(recipeImg | async) as RecipeImg" src={{RecipeImg}} alt="">
+        </div>
+        <div class="add-recipe-page-header">
+            <h2>Add Recipe</h2>
+        </div>
+
+        <form #addRecipeForm="ngForm" appAddRecipeCustomValidator class="add-recipe-page-form" (ngSubmit)="onAddRecipeSubmitHandler(addRecipeForm)">
+            <input name="title" #titleInput="ngModel" class="add-recipe-page-name-input" placeholder="Title" required minlength="4" maxlength="29" ngModel>
+            <div class="error" *ngIf="titleInput.touched && titleInput.errors?.['required']">Title required</div>
+            <div class="error" *ngIf="titleInput.touched && titleInput.errors?.['minlength']">Title length must be at least 4 symbols</div>
+            <input name="imageUrl" #imgInput="ngModel" class="add-recipe-page-imageUrl-input" placeholder="ImageUrl(Will appear in the square)" required ngModel>
+            <div class="error" *ngIf="imgInput.touched && imgInput.errors?.['required']">Image URL is required</div>
+            <textarea name="products" #productsInput="ngModel" class="add-recipe-page-products-input" placeholder="Products-Every product should be on new row(Example: eggs-2)" required ngModel
+                cols="30" rows="5"></textarea>
+            <div class="error" *ngIf="productsInput.touched && productsInput.errors?.['required']">Products field is required</div>
+            <textarea name="description" #descriptionInput="ngModel" class="add-recipe-page-description-input" placeholder="Description-Every step should be on new row" required ngModel cols="30"
+                rows="5"></textarea>
+            <div class="error" *ngIf="descriptionInput.touched && descriptionInput.errors?.['required']">Description field is required</div>
+            <button class="register-page-btn" type="submit">ADD</button>
+        </form>
+    </section>
+
+</section>

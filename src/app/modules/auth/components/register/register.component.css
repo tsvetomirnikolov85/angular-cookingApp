@@ -1,5 +1,5 @@
 .register-page.page-container {
-  min-height: 70vh;
+  min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,9 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #000;
-  padding: 0.8rem 2rem;
-  border-radius: 1rem;
+  background-color: transparent;
 }
 
 .register-page-form {
@@ -31,18 +29,24 @@
   all: unset;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #fff;
+  background-color: #f2f2f2;
   margin-bottom: 1rem;
 }
 
+.user-img-info {
+  color: #fff;
+}
+
 .user-img {
-  position: fixed;
   width: 200px;
   height: 100px;
   z-index: 99;
   top: 100px;
   width: 100px;
   height: 100px;
+  border: 1px solid grey;
+  border-radius: 100%;
+  color: #fff;
 }
 
 .user-img > img {
@@ -54,8 +58,15 @@
 
 .register-page-header {
   color: #f15b27;
-  font-size: 3rem;
   margin-bottom: 3rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 36px;
+}
+
+.register-page-header h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
 }
 
 .register-page-btn {

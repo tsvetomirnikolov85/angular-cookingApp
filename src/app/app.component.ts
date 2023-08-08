@@ -14,11 +14,15 @@ export class AppComponent implements OnInit {
     const id = localStorage.getItem('id');
     const username = localStorage.getItem('username');
     const userImg = localStorage.getItem('userImg');
+    const token = localStorage.getItem('token');
 
-    if (id && username && userImg) {
+    if (id && username && userImg && token) {
       this.authService.isLogged$$.next(true);
       this.authService.username$$.next(username);
       this.authService.userImg$$.next(userImg);
+      this.authService.token$$.next(token);
+    } else {
+      localStorage.clear();
     }
   }
 }

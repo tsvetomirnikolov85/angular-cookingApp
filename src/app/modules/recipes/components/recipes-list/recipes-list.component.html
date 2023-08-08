@@ -1,19 +1,24 @@
 <div class="cards-container">
-    <div class="card">
-        <a routerLink="">
-            <img src="https://images.unsplash.com/photo-1604135307399-86c6ce0aba8e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80">
-        </a>
+    <div *ngFor="let recipe of recipes" class="card">
+        <div class="card-img-container">
+            <a routerLink="">
+                <img src={{recipe.imageUrl}}>
+            </a>
+        </div>
         <div class="card-content">
             <a routerLink="" class="recipe-link">
-                <h2 class="card-title">Яйца по панагюрски</h2>
-                <span class="likes-and-favorites-container">
-                    <i class="fa-regular fa-heart">2</i>
-                    <i class="fa-regular fa-thumbs-up">2</i>
-                </span>
+                <h2 class="card-title">{{recipe.title}}</h2>
             </a>
-
+            <article class="card-info-container">
+                <span class="card-user-container">
+                    <img src={{recipe.ownerImg}}>
+                    <p>{{recipe.ownerName}}</p>
+                </span>
+                <span class="card-likes-container">
+                    <i class={{iconClass}}></i>
+                    <p>{{recipe.likes.length}}</p>
+                </span>
+            </article>
         </div>
-
     </div>
-
 </div>
