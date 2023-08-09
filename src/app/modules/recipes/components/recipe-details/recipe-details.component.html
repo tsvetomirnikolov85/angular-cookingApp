@@ -1,43 +1,40 @@
 <section class="details-page-container">
     <div class="details-page-content">
+        <hr class="line">
+        <h2 class="recipe-title">{{recipe?.title}}</h2>
+        <hr class="line">
         <div class="img-container">
             <span class="like-container">
-                <i class="fa-regular fa-thumbs-up"></i>
+                <button (click)="likeClickHandler()" [disabled]="(clicked)"><i *ngIf="(!isOwner && !isLiked)" class={{iconStyle}}></i></button>
+                <button><i *ngIf="(!isOwner && isLiked)" class="fa-solid fa-thumbs-up"></i></button>
             </span>
 
-            <img src="https://www.simplyrecipes.com/thmb/AveFDCJ133tgQIU4h34mF-aUXD8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SimplyRecipes_StrawberryShortcakeCake_LEAD_4-92d1e5ea968543878257fe8d4c4a8421.jpg"
-                alt="">
+            <img src={{recipe?.imageUrl}} alt="Logo">
+
         </div>
-        <div class="action-buttons">
+        <div *ngIf="(isOwner)" class="action-buttons">
             <a href="">Edit</a>
             <button>Delete</button>
         </div>
+        <hr class="line">
         <div class="products-title-container">
             <h2 class="products-title">Products</h2>
         </div>
-
         <div class="products-list">
             <ul>
-                <li>Яйца</li>
-                <li>Картофи</li>
-                <li>Чубрица</li>
-                <li>Пипер</li>
-                <li>Олио</li>
-                <li>Кренвирши</li>
+                <li *ngFor="let prod of recipe?.products">{{prod}}</li>
+
             </ul>
         </div>
+        <hr class="line">
         <div class="products-title-container">
             <h2 class="desc-title">Method</h2>
         </div>
         <div class="desc-list">
             <ol>
-                <li>Яйца</li>
-                <li>Картофи</li>
-                <li>Чубрица</li>
-                <li>Пипер</li>
-                <li>Олио</li>
-                <li>Кренвирши</li>
+                <li *ngFor="let prod of recipe?.description">{{prod}}</li>
             </ol>
         </div>
+        <hr class="line">
     </div>
 </section>

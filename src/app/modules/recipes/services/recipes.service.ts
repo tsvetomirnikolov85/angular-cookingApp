@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Recipe } from '../interfaces/recipe';
-import { AuthService } from '../../auth/services/auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +10,7 @@ export class RecipesService {
   RECIPE_URL: string = 'http://localhost:8080/recipes';
   recipeImg$$ = new BehaviorSubject<string>('');
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private http: HttpClient) {}
 
   postRecipe(
     title: string,
@@ -33,5 +32,11 @@ export class RecipesService {
 
   getAllRecipes() {
     return this.http.get<Recipe[]>(`${this.RECIPE_URL}`);
+  }
+  getSingleRecipe(id: string) {
+    return this.http.get<Recipe>(`${this.RECIPE_URL}/${id}`);
+  }
+  putLike(recipeId: string, userId: string) {
+    return this.http.put(`${this.RECIPE_URL}/${recipeId}/like`, { userId });
   }
 }

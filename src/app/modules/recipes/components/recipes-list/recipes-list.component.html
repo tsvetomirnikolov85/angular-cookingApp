@@ -2,16 +2,16 @@
     <div *ngFor="let recipe of recipes" class="card">
         <div class="card-img-container">
             <a routerLink="{{recipe._id}}">
-                <img src={{recipe.imageUrl}}>
+                <img src={{recipe?.imageUrl}}>
             </a>
         </div>
         <div class="card-content">
-            <a routerLink="{{recipe._id}}" class="recipe-link">
+            <a routerLink="{{recipe?._id}}" class="recipe-link">
                 <h2 class="card-title">{{recipe.title}}</h2>
             </a>
             <article class="card-info-container">
                 <span class="card-user-container">
-                    <img src={{recipe.ownerImg}}>
+                    <img src={{recipe?.ownerImg}}>
                     <p>{{recipe.ownerName}}</p>
                 </span>
                 <span class="card-likes-container">

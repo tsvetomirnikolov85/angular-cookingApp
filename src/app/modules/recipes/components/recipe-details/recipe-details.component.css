@@ -13,7 +13,7 @@
   margin-top: 14px;
   width: 400px;
   height: 400px;
-  margin-bottom: 18px;
+  margin-bottom: 36px;
 }
 .like-container i {
   color: #fff;
@@ -26,6 +26,10 @@
 
 .like-container i:hover {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.like-container button {
+  all: unset;
 }
 
 .img-container img {
@@ -46,7 +50,9 @@
   margin-right: 16px;
   cursor: pointer;
 }
-
+.recipe-title {
+  color: #d7d7d7;
+}
 .action-buttons button {
   all: unset;
   text-align: center;
@@ -72,8 +78,8 @@
 }
 
 .products-title {
-  color: #fff;
-  font-size: 48px;
+  color: #d7d7d7;
+  font-size: 38px;
   padding: 28px;
 }
 
@@ -82,11 +88,17 @@
 }
 
 .desc-title {
-  color: #fff;
-  font-size: 48px;
+  color: #f4f4f4;
+  font-size: 38px;
   padding: 28px;
 }
 
 .desc-list ol li {
   color: white;
+}
+
+.line {
+  color: gray;
+  height: 1px;
+  width: 20%;
 }
