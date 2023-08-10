@@ -4,17 +4,12 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
-import { AuthService } from '../services/auth.service';
 import { Injectable } from '@angular/core';
 import { ErrorService } from 'src/app/shared/services/error.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
-  constructor(
-    private authService: AuthService,
-    private errorService: ErrorService,
-    private router: Router
-  ) {}
+  constructor(private errorService: ErrorService, private router: Router) {}
 
   isLogged!: boolean;
 

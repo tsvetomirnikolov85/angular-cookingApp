@@ -5,6 +5,7 @@ import { NotFoundComponent } from 'src/app/shared/components/not-found/not-found
 import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 import { EditRecipeComponent } from './components/edit-recipe/edit-recipe.component';
+import { RecipeGuard } from './guards/recipe.guard';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
   {
     path: 'add',
     component: AddRecipeComponent,
+    canActivate: [RecipeGuard],
   },
   {
     path: ':id',
@@ -22,6 +24,7 @@ const routes: Routes = [
   {
     path: ':id/edit',
     component: EditRecipeComponent,
+    canActivate: [RecipeGuard],
   },
   {
     path: '**',

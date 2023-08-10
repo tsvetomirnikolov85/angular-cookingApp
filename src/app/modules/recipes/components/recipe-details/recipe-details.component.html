@@ -1,7 +1,7 @@
 <section class="details-page-container">
     <div class="details-page-content">
         <hr class="line">
-        <h2 class="recipe-title">{{recipe?.title}}</h2>
+        <h2 class="recipe-title">{{recipe.title}}</h2>
         <hr class="line">
         <div class="img-container">
             <span class="like-container">
@@ -13,7 +13,7 @@
 
         </div>
         <div *ngIf="(isOwner)" class="action-buttons">
-            <a href="">Edit</a>
+            <a href="/recipes/{{recipe._id}}/edit">Edit</a>
             <button>Delete</button>
         </div>
         <hr class="line">
