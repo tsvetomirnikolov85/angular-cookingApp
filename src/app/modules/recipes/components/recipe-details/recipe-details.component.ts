@@ -13,7 +13,8 @@ export class RecipeDetailsComponent implements OnInit {
   constructor(
     private recipeService: RecipesService,
     private route: ActivatedRoute,
-    private errorService: ErrorService
+    private errorService: ErrorService,
+    private router: Router
   ) {}
   recipeId!: string;
   recipe!: Recipe;
@@ -22,7 +23,7 @@ export class RecipeDetailsComponent implements OnInit {
   isOwner!: boolean;
   iconStyle: string = 'fa-regular fa-thumbs-up';
   clicked = false;
-
+  deleteClick = false;
   likeClickHandler() {
     if (!this.loggedUserId) {
       this.errorService.err$$.next('To use this function please login!');
@@ -33,6 +34,16 @@ export class RecipeDetailsComponent implements OnInit {
     this.recipeService
       .putLike(this.recipeId, this.loggedUserId)
       .subscribe((r) => {});
+  }
+
+  deleteClickHandler() {
+    const result = confirm(
+      `Are you sure you want to delete ${this.recipe.title}`
+    );
+    if (result) {
+      this.deleteClick = true;
+      this.recipeService.deleteRecipe(this.recipeId);
+    }
   }
 
   ngOnInit(): void {

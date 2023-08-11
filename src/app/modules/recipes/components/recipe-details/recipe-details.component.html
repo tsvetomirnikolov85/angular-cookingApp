@@ -14,7 +14,8 @@
         </div>
         <div *ngIf="(isOwner)" class="action-buttons">
             <a href="/recipes/{{recipe._id}}/edit">Edit</a>
-            <button>Delete</button>
+            <button (click)="deleteClickHandler()" type="submit" [disabled]="(deleteClick)">Delete</button>
+
         </div>
         <hr class="line">
         <div class="products-title-container">

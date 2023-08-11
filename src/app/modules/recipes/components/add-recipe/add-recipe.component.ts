@@ -43,7 +43,7 @@ export class AddRecipeComponent implements OnInit {
     this.recipeService
       .postRecipe(title, imageUrl, this.productsArray, this.descArray)
       .subscribe(() => {
-        this.router.navigate(['/recipes/all']);
+        this.router.navigate(['/recipes']);
       });
   }
 

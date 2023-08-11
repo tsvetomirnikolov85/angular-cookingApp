@@ -14,6 +14,8 @@ Run command `npm install`
 
 Ren command ng serve --o and will access project on http://localhost:4200
 
+## Run in dev mode
+
 ## Main folder structure
 
 src/
@@ -54,7 +56,7 @@ src/
 
 Header
 
-    Description: A navigation header that typically appears at the top of the page.
+    Description: Appears at the top of the page.
     Purpose: Provides easy access to different sections of the application and enhances user navigation.
     Usage: Include links to different views, user profile, and other relevant actions.
 
@@ -90,7 +92,7 @@ Recipe Details
 
 Recipes List
 
-    Description: Displays a list of recipes, often as cards or a grid.
+    Description: Displays a list of recipes, as cards.
     Purpose: Showcase a collection of recipes available in the app.
     Usage: Fetch a list of recipes and display them in a visually appealing manner.
 
@@ -133,6 +135,12 @@ add-recipe-custom-validator.directive
     Description: This directive provides custom validation for the fields in the recipe creation form.
     Purpose: Enhances the standard Angular form validation by adding custom validation logic for recipe-related fields.
     Usage: Use this directive within the add recipe component to ensure that ingredients, instructions, and other recipe-related fields meet specific criteria.
+
+## Interceptors
+
+error.interceptor.ts
+
+     Description: This interceptor provides global error handling.
 
 ## Routing
 

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Recipe } from '../interfaces/recipe';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ export class RecipesService {
   RECIPE_URL: string = 'http://localhost:8080/recipes';
   recipeImg$$ = new BehaviorSubject<string>('');
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   postRecipe(
     title: string,
@@ -38,5 +39,10 @@ export class RecipesService {
   }
   putLike(recipeId: string, userId: string) {
     return this.http.put(`${this.RECIPE_URL}/${recipeId}/like`, { userId });
+  }
+  deleteRecipe(id: string) {
+    this.http.delete(`${this.RECIPE_URL}/${id}`).subscribe(() => {
+      this.router.navigate(['/recipes']);
+    });
   }
 }

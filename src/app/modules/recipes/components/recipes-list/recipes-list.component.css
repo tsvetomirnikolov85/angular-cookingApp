@@ -3,10 +3,8 @@
   flex-wrap: wrap;
   margin-top: 10px;
   gap: 12px;
-  max-width: 1377px;
+  max-width: 1000px;
   margin: 0px auto;
-  min-height: 83vh;
-  overflow: hidden;
 }
 .card {
   display: flex;
@@ -14,11 +12,16 @@
   border: 1px solid #fff;
   overflow: hidden;
   background-color: transparent;
-  border: 2px solid black;
+  border: 1px solid gray;
 }
 .card-img-container {
   width: 100%;
-  height: 300px;
+  height: 290px;
+}
+.card-img-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .card-content {
