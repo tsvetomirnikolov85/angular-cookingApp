@@ -1,1 +1,26 @@
-<p>edit-recipe works!</p>
+<section class="edit-recipe-page page-container">
+    <section class="edit-recipe-page-form-section">
+        <div class="recipe-img">
+            <img *ngIf="(recipeImg | async) as RecipeImg" src={{RecipeImg}} alt="">
+        </div>
+        <div class="edit-recipe-page-header">
+            <h2>Edit Recipe</h2>
+        </div>
+
+        <form #editRecipeForm="ngForm" appEditRecipeCustomValidator class="edit-recipe-page-form" (ngSubmit)="onEditRecipeSubmitHandler(editRecipeForm)">
+            <input name="title" #titleInput="ngModel" class="edit-recipe-page-name-input" placeholder="Title" required minlength="4" maxlength="29" ngModel={{oldTitle}}>
+            <div class="error" *ngIf="titleInput.touched && titleInput.errors?.['required']">Title required</div>
+            <div class="error" *ngIf="titleInput.touched && titleInput.errors?.['minlength']">Title length must be at least 4 symbols</div>
+            <input name="imageUrl" #imgInput="ngModel" class="edit-recipe-page-imageUrl-input" placeholder="ImageUrl(Will appear in the square)" required ngModel={{oldImg}}>
+            <div class="error" *ngIf="imgInput.touched && imgInput.errors?.['required']">Image URL is required</div>
+            <textarea name="products" #productsInput="ngModel" class="edit-recipe-page-products-input" placeholder="Products-Every product should be on new row(Example: eggs-2)" required
+                ngModel={{oldProducts}} cols="30" rows="5"></textarea>
+            <div class="error" *ngIf="productsInput.touched && productsInput.errors?.['required']">Products field is required</div>
+            <textarea name="description" #descriptionInput="ngModel" class="edit-recipe-page-description-input" placeholder="Description-Every step should be on new row" required ngModel={{oldDesc}}
+                cols="30" rows="5"></textarea>
+            <div class="error" *ngIf="descriptionInput.touched && descriptionInput.errors?.['required']">Description field is required</div>
+            <button class="register-page-btn" type="submit">EDIT</button>
+        </form>
+    </section>
+
+</section>

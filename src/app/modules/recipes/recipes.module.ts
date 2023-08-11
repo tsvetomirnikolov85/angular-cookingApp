@@ -7,7 +7,8 @@ import { AddRecipeComponent } from './components/add-recipe/add-recipe.component
 import { EditRecipeComponent } from './components/edit-recipe/edit-recipe.component';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 import { FormsModule } from '@angular/forms';
-import { AddRecipeFormCustomValidatorDirective } from './directives/add-recipe-custom-validator.directive';
+import { AddRecipeFormCustomValidatorDirective } from './directives/add-recipe-custom-validator.directive copy';
+import { EditRecipeFormCustomValidatorDirective } from './directives/edit-recipe-custom-validator.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AddRecipeFormCustomValidatorDirective } from './directives/add-recipe-c
     EditRecipeComponent,
     RecipeDetailsComponent,
     AddRecipeFormCustomValidatorDirective,
+    EditRecipeFormCustomValidatorDirective,
   ],
   imports: [CommonModule, RecipesRoutingModule, FormsModule],
   exports: [

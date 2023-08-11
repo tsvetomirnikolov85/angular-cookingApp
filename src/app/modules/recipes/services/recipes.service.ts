@@ -45,4 +45,19 @@ export class RecipesService {
       this.router.navigate(['/recipes']);
     });
   }
+
+  updateRecipe(
+    id: string,
+    title: string,
+    imageUrl: string,
+    products: string[],
+    description: string[]
+  ) {
+    return this.http.put<Recipe[]>(`${this.RECIPE_URL}/${id}`, {
+      title,
+      imageUrl,
+      products,
+      description,
+    });
+  }
 }

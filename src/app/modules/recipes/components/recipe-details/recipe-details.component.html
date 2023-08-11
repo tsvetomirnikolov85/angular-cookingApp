@@ -13,7 +13,7 @@
 
         </div>
         <div *ngIf="(isOwner)" class="action-buttons">
-            <a href="/recipes/{{recipe._id}}/edit">Edit</a>
+            <a routerLink="/recipes/{{recipe._id}}/edit">Edit</a>
             <button (click)="deleteClickHandler()" type="submit" [disabled]="(deleteClick)">Delete</button>
 
         </div>
