@@ -10,7 +10,7 @@
           {{Username}}
         </span>
       </span>
-      <a routerLink="/user/profile"><img *ngIf="(userImg | async) as Img" src={{Img}} alt="" class="user-profile-img" title="Profile"></a>
+      <a routerLink="/user/profile/{{loggedUserId}}"><img *ngIf="(userImg | async) as Img" src={{Img}} alt="" class="user-profile-img" title="Profile"></a>
 
     </div>
     <nav>

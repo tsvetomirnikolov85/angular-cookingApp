@@ -1,1 +1,36 @@
-<p>profile works!</p>
+<section class="user-profile-page-container">
+    <div class="user-info-container">
+        <div class="user-img-container">
+            <img src={{user.imageUrl}} alt="">
+        </div>
+        <h2 class="username">{{user.username}}</h2>
+    </div>
+    <hr class="line">
+    <h2 class="title">My Recipes</h2>
+    <hr class="line">
+
+    <div class="cards-container">
+        <div *ngFor="let recipe of myRecipes" class="card">
+            <div class="card-img-container">
+                <a routerLink="/recipes/{{recipe._id}}">
+                    <img src={{recipe.imageUrl}}>
+                </a>
+            </div>
+            <div class="card-content">
+                <a routerLink="/recipes/{{recipe._id}}" class="recipe-link">
+                    <h2 class="card-title">{{recipe.title}}</h2>
+                </a>
+                <article class="card-info-container">
+                    <span class="card-user-container">
+                        <img src={{recipe.ownerImg}}>
+                        <p>{{recipe.ownerName}}</p>
+                    </span>
+                    <span class="card-likes-container">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                        <p>{{recipe.likes.length}}</p>
+                    </span>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>

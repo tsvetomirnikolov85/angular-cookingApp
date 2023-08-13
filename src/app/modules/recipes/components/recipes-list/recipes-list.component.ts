@@ -9,7 +9,6 @@ import { Recipe } from '../../interfaces/recipe';
 })
 export class RecipesListComponent implements OnInit {
   recipes!: Recipe[];
-
   iconClass = 'fa-regular fa-thumbs-up';
 
   constructor(private recipeService: RecipesService) {}

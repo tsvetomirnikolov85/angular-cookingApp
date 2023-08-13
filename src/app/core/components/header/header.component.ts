@@ -12,9 +12,11 @@ export class HeaderComponent implements OnInit {
   isLogged!: Observable<boolean>;
   username!: Observable<string>;
   userImg!: Observable<string>;
+  loggedUserId!: any;
   ngOnInit(): void {
     this.isLogged = this.authService.loginStatus;
     this.username = this.authService.loggedUsername;
     this.userImg = this.authService.loggedUserImg;
+    this.loggedUserId = localStorage.getItem('id');
   }
 }

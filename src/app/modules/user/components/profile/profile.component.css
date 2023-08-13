@@ -1,0 +1,136 @@
+.user-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+  gap: 26px;
+}
+
+.user-img-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+.user-img-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.username {
+  color: #fff;
+}
+
+.title {
+  color: #fff;
+  margin: 48px 0px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 42px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0px auto;
+}
+.card {
+  display: flex;
+  flex: 0 0 20rem;
+  border: 1px solid #fff;
+  overflow: hidden;
+  background-color: transparent;
+  border: 1px solid gray;
+}
+.card-img-container {
+  width: 100%;
+  height: 290px;
+}
+.card-img-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-image > img {
+  object-fit: cover;
+}
+
+.recipe-link {
+  text-decoration: none;
+  color: #fff;
+}
+.card-title {
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  margin: 12px 0px;
+  padding: 8px;
+  font-size: 18px;
+}
+
+.card-title:hover {
+  color: #ed5925;
+  transition: ease-in-out 0.2s;
+}
+
+.card-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 12px;
+}
+
+.card-user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-likes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-user-container img {
+  width: 30px;
+  min-height: 30px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.card-user-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card-user-container a:hover {
+  text-decoration: underline;
+  color: #ed5925;
+  transition: ease-in-out 0.2s;
+}
+.card-like-btn {
+  all: unset;
+  cursor: pointer;
+}
+
+.line {
+  color: gray;
+  height: 1px;
+  width: 100%;
+}

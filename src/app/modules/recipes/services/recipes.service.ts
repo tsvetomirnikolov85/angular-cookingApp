@@ -34,6 +34,10 @@ export class RecipesService {
   getAllRecipes() {
     return this.http.get<Recipe[]>(`${this.RECIPE_URL}`);
   }
+
+  getMyRecipes(ownerId: string) {
+    return this.http.get<Recipe[]>(`${this.RECIPE_URL}/${ownerId}/all`);
+  }
   getSingleRecipe(id: string) {
     return this.http.get<Recipe>(`${this.RECIPE_URL}/${id}`);
   }
