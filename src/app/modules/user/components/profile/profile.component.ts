@@ -15,7 +15,6 @@ export class ProfileComponent implements OnInit {
   constructor(
     private userService: UserService,
     private recipeService: RecipesService,
-    private router: Router,
     private route: ActivatedRoute
   ) {}
   userId!: string;
@@ -24,15 +23,10 @@ export class ProfileComponent implements OnInit {
   myRecipes!: Recipe[];
 
   ngOnInit(): void {
-    const userFromStorage = localStorage.getItem('id');
     this.route.params.subscribe((p) => {
       this.loggedUserId = p['id'];
     });
 
-    // if (userFromStorage != this.loggedUserId) {
-    //   this.router.navigate([NotFoundComponent]);
-    //   return;
-    // }
     this.userService.getUSer(this.loggedUserId).subscribe((user) => {
       this.user = user;
     });

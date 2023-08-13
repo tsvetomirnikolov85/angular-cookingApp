@@ -23,7 +23,8 @@ export class ErrorInterceptor implements HttpInterceptor {
       catchError((err) => {
         if (!!err.error.message) {
           if (err.error.message === 'Not found') {
-            this.router.navigate([NotFoundComponent]);
+            this.router.navigate(['/']);
+            this.errorService.err$$.next(err.error.message);
             return [err];
           }
           this.errorService.err$$.next(err.error.message);
