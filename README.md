@@ -12,33 +12,11 @@ Run command `npm install`
 
 ## Run in dev mode
 
-Ren command ng serve --o and will access project on http://localhost:4200
+Run command ng serve --o and will access project on http://localhost:4200
 
-## Main folder structure
+## Run server
 
-src/
-|-- app/
-| | -- core/
-| | |-- components/
-| | | |-- header/
-| | | |-- home/
-| | -- modules/
-| | |-- auth/
-| | |-- recipes/
-| | |-- user/
-| |-- shared/
-| | |-- components/
-| | |-- interceptors/
-| | |-- services/
-| |-- app-routing.module.ts
-| |-- app-component.css
-| |-- app-component.html
-| |-- app.component.ts
-| |-- app.module.ts
-| -- assets/
-| |-- images/
-| |-- styles/
-|-- ...
+Open server folder in integrated terminal. Run npm start
 
 ## Modules
 
