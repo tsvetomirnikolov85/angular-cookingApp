@@ -6,6 +6,7 @@
   max-width: 1000px;
   margin: 0px auto;
 }
+
 .card {
   display: flex;
   flex: 0 0 20rem;
