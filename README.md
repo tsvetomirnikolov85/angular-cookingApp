@@ -14,8 +14,6 @@ Run command `npm install`
 
 Ren command ng serve --o and will access project on http://localhost:4200
 
-## Run in dev mode
-
 ## Main folder structure
 
 src/
